@@ -1,0 +1,213 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  background: transparent;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.section {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+#app2 {
+  margin: 5%;
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 4rem;
+
+  .title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .description {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .questions {
+    margin-bottom: 4rem;
+
+    .question {
+      margin-bottom: 2rem;
+
+      label {
+        display: block;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      input[type="range"] {
+        width: 100%;
+      }
+
+      input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        cursor: pointer;
+        outline: none;
+        border-radius: 15px;
+        height: 20px;
+        height: 6px;
+        background: #ccc;
+      }
+
+      input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        background-size: cover;
+        border-radius: 50%;
+        transition: 0.2s ease-in-out;
+        transform: rotateZ(var(--thumb-rotate, 0deg));
+      }
+
+      input[type="range"].unlucky::-webkit-slider-thumb {
+        background-image: url("../images/unlucky-smile.webp");
+      }
+      input[type="range"].neutral::-webkit-slider-thumb {
+        background-image: url("../images/neutral-smile.webp");
+      }
+      input[type="range"].lucky::-webkit-slider-thumb {
+        background-image: url("../images/lucky-smile.webp");
+      }
+
+      /* Thumb: Firefox */
+      input[type="range"]::-moz-range-thumb {
+        height: 30px;
+        width: 30px;
+        background: transparent;
+        background-size: cover;
+        border: none;
+        border-radius: 50%;
+        transform: rotateZ(var(--thumb-rotate, 0deg));
+        transition: 0.2s ease-in-out;
+      }
+
+      input[type="range"].unlucky::-moz-range-thumb {
+        background-image: url("../images/unlucky-smile.webp");
+      }
+      input[type="range"].neutral::-moz-range-thumb {
+        background-image: url("../images/neutral-smile.webp");
+      }
+      input[type="range"].lucky::-moz-range-thumb {
+        background-image: url("../images/lucky-smile.webp");
+      }
+
+      input[type="range"]::-webkit-slider-thumb:hover {
+        box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+      }
+      input[type="range"]:active::-webkit-slider-thumb {
+        box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+      }
+
+      input[type="range"]:focus::-webkit-slider-thumb {
+        box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+      }
+
+      input[type="range"]::-moz-range-thumb:hover {
+        box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+      }
+      input[type="range"]:active::-moz-range-thumb {
+        box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+      }
+      input[type="range"]:focus::-moz-range-thumb {
+        box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+      }
+    }
+  }
+
+  .results-wrapper {
+    .total-score {
+      margin-bottom: 2rem;
+
+      b {
+        font-weight: 600;
+      }
+    }
+
+    .results-description {
+      margin-bottom: 2rem;
+    }
+
+    .results {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+
+      .unlucky,
+      .neutral,
+      .lucky {
+        width: 100%;
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+      }
+
+      .unlucky {
+        background-color: red;
+      }
+
+      .neutral {
+        background-color: gray;
+      }
+
+      .lucky {
+        background-color: green;
+      }
+
+      @media (width < 900px) {
+        & {
+          flex-direction: column;
+        }
+      }
+    }
+
+    .results-text {
+      margin-bottom: 2rem;
+
+      b {
+        font-weight: 600;
+      }
+    }
+  }
+}

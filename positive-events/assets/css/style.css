@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+  list-style: none;
+  text-decoration: none;
+  background: transparent;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 1.6rem;
+}
+
+.section {
+  width: 100%;
+  padding: 5rem 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+#app2 {
+  margin: 5%;
+  -webkit-box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  padding: 4rem;
+}
+#app2 .title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#app2 .description {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+#app2 .questions {
+  margin-bottom: 4rem;
+}
+#app2 .questions .question {
+  margin-bottom: 2rem;
+  /* Thumb: Firefox */
+}
+#app2 .questions .question label {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+#app2 .questions .question input[type=range] {
+  width: 100%;
+}
+#app2 .questions .question input[type=range] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  border-radius: 15px;
+  height: 20px;
+  height: 6px;
+  background: #ccc;
+}
+#app2 .questions .question input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  background-size: cover;
+  border-radius: 50%;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform: rotateZ(var(--thumb-rotate, 0deg));
+          transform: rotateZ(var(--thumb-rotate, 0deg));
+}
+#app2 .questions .question input[type=range].unlucky::-webkit-slider-thumb {
+  background-image: url("../images/unlucky-smile.webp");
+}
+#app2 .questions .question input[type=range].neutral::-webkit-slider-thumb {
+  background-image: url("../images/neutral-smile.webp");
+}
+#app2 .questions .question input[type=range].lucky::-webkit-slider-thumb {
+  background-image: url("../images/lucky-smile.webp");
+}
+#app2 .questions .question input[type=range]::-moz-range-thumb {
+  height: 30px;
+  width: 30px;
+  background: transparent;
+  background-size: cover;
+  border: none;
+  border-radius: 50%;
+  transform: rotateZ(var(--thumb-rotate, 0deg));
+  -moz-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+}
+#app2 .questions .question input[type=range].unlucky::-moz-range-thumb {
+  background-image: url("../images/unlucky-smile.webp");
+}
+#app2 .questions .question input[type=range].neutral::-moz-range-thumb {
+  background-image: url("../images/neutral-smile.webp");
+}
+#app2 .questions .question input[type=range].lucky::-moz-range-thumb {
+  background-image: url("../images/lucky-smile.webp");
+}
+#app2 .questions .question input[type=range]::-webkit-slider-thumb:hover {
+  -webkit-box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+          box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+}
+#app2 .questions .question input[type=range]:active::-webkit-slider-thumb {
+  -webkit-box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+          box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+#app2 .questions .question input[type=range]:focus::-webkit-slider-thumb {
+  -webkit-box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+          box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+#app2 .questions .question input[type=range]::-moz-range-thumb:hover {
+  box-shadow: 0 0 0 10px rgba(255, 85, 0, 0.1);
+}
+#app2 .questions .question input[type=range]:active::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+#app2 .questions .question input[type=range]:focus::-moz-range-thumb {
+  box-shadow: 0 0 0 13px rgba(255, 85, 0, 0.2);
+}
+#app2 .results-wrapper .total-score {
+  margin-bottom: 2rem;
+}
+#app2 .results-wrapper .total-score b {
+  font-weight: 600;
+}
+#app2 .results-wrapper .results-description {
+  margin-bottom: 2rem;
+}
+#app2 .results-wrapper .results {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+#app2 .results-wrapper .results .unlucky,
+#app2 .results-wrapper .results .neutral,
+#app2 .results-wrapper .results .lucky {
+  width: 100%;
+  color: white;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+}
+#app2 .results-wrapper .results .unlucky {
+  background-color: red;
+}
+#app2 .results-wrapper .results .neutral {
+  background-color: gray;
+}
+#app2 .results-wrapper .results .lucky {
+  background-color: green;
+}
+@media (width < 900px) {
+  #app2 .results-wrapper .results {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+#app2 .results-wrapper .results-text {
+  margin-bottom: 2rem;
+}
+#app2 .results-wrapper .results-text b {
+  font-weight: 600;
+}/*# sourceMappingURL=style.css.map */
