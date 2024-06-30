@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Project on Vue</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.png"
+      type="image/png"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <main class="main">
+      <section class="section">
+        <div class="container">
+          <div id="app2">
+            <h2 class="title">Expecting positive events</h2>
+
+            <p class="description">
+              Read each statement carefully and indicate a value from 0 to 100
+              that represents the degree to which you agree about the likelihood
+              of positive future events. 0 means that nothing will happen, that
+              is, in fact, zero probability, and 100 means a high degree of
+              agreement that this statement will certainly come true. Do not
+              think too long about these statements and be extremely honest in
+              your assessments.
+            </p>
+
+            <div class="questions">
+              <div class="question" v-for="(value, i) in values">
+                <label><i> {{ text[i] }}: {{ value }} </i></label>
+                <input
+                  type="range"
+                  :min="0"
+                  :max="100"
+                  :step="1"
+                  v-model.number="values[i]"
+                  :value="values[i]"
+                  :class="value < 46 ? 'unlucky' : value < 81 ? 'neutral' : 'lucky'"
+                />
+              </div>
+            </div>
+
+            <div class="results-wrapper">
+              <p class="total-score">
+                Total Score: <b>{{ computedTotalScore }}</b>
+              </p>
+              <p class="results-description">
+                The expectations of successful people that positive events in
+                the future will come true are much higher than those of unlucky
+                people.
+              </p>
+
+              <div class="results">
+                <div class="unlucky">Unlucky people: 0-45</div>
+                <div class="neutral">Neutral people: 46-80</div>
+                <div class="lucky">Lucky people: 81-100</div>
+              </div>
+
+              <h4 class="results-text">
+                I
+                <span :style="{ color: myLuckLevel.style }"
+                  >{{ myLuckLevel.type }}</span
+                >
+                people {{ myLuckLevel.char }}
+                <br />
+                My score is <b>{{ computedOverallRating }}</b>
+              </h4>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./assets/js/vue.global.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
