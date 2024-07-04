@@ -2,6 +2,9 @@
   "name": "learn-vue-app",
   "version": "0.1.0",
   "private": true,
+  "description": "A Vue.js project with TypeScript to learn Vue.js. This project includes Vue Router, Vuex, Sass, and uses Commitizen for standardized commits.",
+  "author": "Estecore",
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -27,7 +30,6 @@
     "@vue/cli-plugin-router": "~5.0.0",
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-plugin-vuex": "~5.0.0",
-    "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
     "commitizen": "^4.3.0",
     "cz-conventional-changelog": "^3.3.0",
