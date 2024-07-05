@@ -45,6 +45,8 @@ export default defineComponent({
   gap: 0.5rem;
 
   span {
+    word-break: break-word;
+
     position: relative;
     cursor: pointer;
     transition: color 0.3s ease, text-decoration 0.3s ease;
