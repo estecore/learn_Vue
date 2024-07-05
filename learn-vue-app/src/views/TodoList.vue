@@ -21,12 +21,11 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, computed } from "vue";
+import { useStore } from "vuex";
 
 import AddTodo from "../components/AddTodo.vue";
 import TodoItem from "../components/TodoItem.vue";
-
-import { ITodoItem } from "../types";
 
 export default defineComponent({
   name: "TodoList",
@@ -35,24 +34,20 @@ export default defineComponent({
     TodoItem,
   },
   setup() {
-    const todos = ref<ITodoItem[]>([
-      { id: 1, text: "Learn Vue", completed: false },
-      { id: 2, text: "Learn Vue Router", completed: false },
-    ]);
+    const store = useStore();
+
+    const todos = computed(() => store.getters["todo/allTodos"]);
 
     const addTodo = (text: string) => {
-      todos.value.push({ id: todos.value.length + 1, text, completed: false });
+      store.dispatch("todo/addTodoAsync", text);
     };
 
     const removeTodo = (id: number) => {
-      todos.value = todos.value.filter((todo) => todo.id !== id);
+      store.commit("todo/REMOVE_TODO", id);
     };
 
     const toggleCompleted = (id: number) => {
-      const todo = todos.value.find((todo) => todo.id === id);
-      if (todo) {
-        todo.completed = !todo.completed;
-      }
+      store.commit("todo/TOGGLE_TODO", id);
     };
 
     return {

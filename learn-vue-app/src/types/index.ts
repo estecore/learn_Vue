@@ -3,3 +3,11 @@ export interface ITodoItem {
   text: string;
   completed: boolean;
 }
+
+export interface TodoState {
+  todos: ITodoItem[];
+}
+
+export interface RootState {
+  todo: TodoState;
+}
