@@ -52,6 +52,7 @@ export default defineComponent({
     transition: color 0.3s ease, text-decoration 0.3s ease;
 
     &::before {
+      user-select: none;
       content: "○";
       position: absolute;
       left: -1rem;
@@ -60,6 +61,7 @@ export default defineComponent({
     }
 
     &.completed {
+      user-select: none;
       text-decoration: line-through;
       color: #42b983;
       transition: all 0.3s ease;
@@ -71,6 +73,7 @@ export default defineComponent({
   }
 
   button {
+    user-select: none;
     padding: 10px;
     background: #ff1111;
     opacity: 0.8;
